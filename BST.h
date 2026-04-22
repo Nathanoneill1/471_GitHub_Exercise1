@@ -11,6 +11,8 @@
 // Include the dictionary ADT
 #include "dictionary.h"
 
+#include <iostream>
+
 #pragma once
 
 using namespace std;
@@ -31,6 +33,7 @@ private:
   BSTNode<Key,E>* getmin(BSTNode<Key, E>*);
   BSTNode<Key,E>* removehelp(BSTNode<Key, E>*, const Key&);
   E* findhelp(BSTNode<Key, E>*, const Key&) const;
+  void printPreOrder(BSTNode<Key, E>*, int) const;
   void printhelp(BSTNode<Key, E>*, int) const;
   void visit(BSTNode<Key, E>*) const;
 
@@ -186,6 +189,14 @@ E* BST<Key, E>::findhelp(BSTNode<Key, E>* root,
       *temp = root->element();
       return temp;  // Found it
   }
+}
+
+// Print out a BST PREORDER!!!
+template <typename Key, typename E>
+void BST<Key, E>::
+printPreOrder(BSTNode<Key, E>* root, int level) const {
+  std::cout << "The Print Pre-Order function goes here!" << std::endl;
+  std::cout << "cats" << std::endl;
 }
 
 // Print out a BST
